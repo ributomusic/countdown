@@ -1,164 +1,201 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ributo Mobile</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ributo Mobile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;500&display=swap" rel="stylesheet">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Noto Serif JP',serif}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Noto Serif JP', serif
+    }
 
-body{
-  background:#000;
-  color:#fff;
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  overflow:hidden;
-  -webkit-tap-highlight-color: transparent;
-}
+    body {
+      background: #000;
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      -webkit-tap-highlight-color: transparent;
+    }
 
-/* 🔥 fuego base mobile */
-.fire-base{
-  position:fixed;
-  bottom:0;
-  width:100%;
-  height:25vh;
-  background:radial-gradient(circle at 50% 100%, rgba(255,100,0,0.4), transparent 70%);
-  filter:blur(25px);
-  animation:breath 3s ease-in-out infinite;
-}
+    /* 🔥 fuego base mobile */
+    .fire-base {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height: 25vh;
+      background: radial-gradient(circle at 50% 100%, rgba(255, 100, 0, 0.4), transparent 70%);
+      filter: blur(25px);
+      animation: breath 3s ease-in-out infinite;
+    }
 
-@keyframes breath{
-  0%,100%{opacity:0.5}
-  50%{opacity:1}
-}
+    @keyframes breath {
 
-/* 🌫️ humo ligero */
-.smoke{
-  position:fixed;
-  width:150%;
-  height:150%;
-  background:radial-gradient(circle, rgba(255,255,255,0.03), transparent 70%);
-  animation:smokeMove 25s linear infinite;
-}
+      0%,
+      100% {
+        opacity: 0.5
+      }
 
-@keyframes smokeMove{
-  from{transform:translate(0,0)}
-  to{transform:translate(-150px,-150px)}
-}
+      50% {
+        opacity: 1
+      }
+    }
 
-.container{
-  text-align:center;
-  z-index:2;
-  padding:20px;
-}
+    /* 🌫️ humo ligero */
+    .smoke {
+      position: fixed;
+      width: 150%;
+      height: 150%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.03), transparent 70%);
+      animation: smokeMove 25s linear infinite;
+    }
 
-.logo{
-  width:140px;
-  margin-bottom:30px;
-}
+    @keyframes smokeMove {
+      from {
+        transform: translate(0, 0)
+      }
 
-.countdown{
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  font-size:2rem;
-  flex-wrap:wrap;
-}
+      to {
+        transform: translate(-150px, -150px)
+      }
+    }
 
-.label{
-  font-size:0.6rem;
-  opacity:0.5;
-}
+    .container {
+      text-align: center;
+      z-index: 2;
+      padding: 20px;
+    }
 
-/* 🔥 partículas fuego (optimizado) */
-.fire{
-  position:fixed;
-  width:6px;height:6px;
-  border-radius:50%;
-  background:radial-gradient(circle, orange, red, transparent);
-  pointer-events:none;
-  animation:rise 2.5s linear forwards;
-}
+    .logo {
+      width: 200px;
+      margin-bottom: 30px;
+    }
 
-@keyframes rise{
-  0%{transform:translateY(0);opacity:1}
-  100%{transform:translateY(-120px);opacity:0}
-}
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 2rem;
+      flex-wrap: wrap;
+    }
 
-/* 🔵 partículas touch */
-.touch{
-  position:fixed;
-  width:8px;height:8px;
-  border-radius:50%;
-  background:rgba(0,150,255,0.9);
-  box-shadow:0 0 10px rgba(0,150,255,0.7);
-  pointer-events:none;
-  animation:fade 0.8s forwards;
-}
+    .label {
+      font-size: 0.6rem;
+      opacity: 0.5;
+    }
 
-@keyframes fade{
-  to{opacity:0; transform:scale(0.4)}
-}
+    /* 🔥 partículas fuego (optimizado) */
+    .fire {
+      position: fixed;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: radial-gradient(circle, orange, red, transparent);
+      pointer-events: none;
+      animation: rise 2.5s linear forwards;
+    }
 
-</style>
+    @keyframes rise {
+      0% {
+        transform: translateY(0);
+        opacity: 1
+      }
+
+      100% {
+        transform: translateY(-120px);
+        opacity: 0
+      }
+    }
+
+    /* 🔵 partículas touch */
+    .touch {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(0, 150, 255, 0.9);
+      box-shadow: 0 0 10px rgba(0, 150, 255, 0.7);
+      pointer-events: none;
+      animation: fade 0.8s forwards;
+    }
+
+    @keyframes fade {
+      to {
+        opacity: 0;
+        transform: scale(0.4)
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="smoke"></div>
-<div class="fire-base"></div>
+  <div class="smoke"></div>
+  <div class="fire-base"></div>
 
-<div class="container">
+  <div class="container">
 
-  <!-- 🔴 CAMBIA TU LOGO AQUÍ -->
-  <img src="logo.png" class="logo">
+    <!-- 🔴 CAMBIA TU LOGO AQUÍ -->
+    <img src="logo.png" class="logo">
 
-  <div class="countdown">
-    <div><span id="d">0</span><div class="label">D</div></div>
-    <div><span id="h">0</span><div class="label">H</div></div>
-    <div><span id="m">0</span><div class="label">M</div></div>
-    <div><span id="s">0</span><div class="label">S</div></div>
+    <div class="countdown">
+      <div><span id="d">0</span>
+        <div class="label">D</div>
+      </div>
+      <div><span id="h">0</span>
+        <div class="label">H</div>
+      </div>
+      <div><span id="m">0</span>
+        <div class="label">M</div>
+      </div>
+      <div><span id="s">0</span>
+        <div class="label">S</div>
+      </div>
+    </div>
+
   </div>
 
-</div>
+  <script>
+    // ⏳ countdown
+    const target = new Date(`June 20, ${new Date().getFullYear()} 00:00:00`).getTime();
+    setInterval(() => {
+      const diff = target - Date.now();
+      d.textContent = Math.floor(diff / (1000 * 60 * 60 * 24));
+      h.textContent = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      m.textContent = Math.floor((diff / 1000 / 60) % 60);
+      s.textContent = Math.floor((diff / 1000) % 60);
+    }, 1000);
 
-<script>
-// ⏳ countdown
-const target=new Date(`June 20, ${new Date().getFullYear()} 00:00:00`).getTime();
-setInterval(()=>{
-  const diff=target-Date.now();
-  d.textContent=Math.floor(diff/(1000*60*60*24));
-  h.textContent=Math.floor((diff/(1000*60*60))%24);
-  m.textContent=Math.floor((diff/1000/60)%60);
-  s.textContent=Math.floor((diff/1000)%60);
-},1000);
+    // 🔥 fuego continuo (ligero)
+    setInterval(() => {
+      const p = document.createElement('div');
+      p.className = 'fire';
+      p.style.left = Math.random() * innerWidth + 'px';
+      p.style.top = (innerHeight - 10) + 'px';
+      document.body.appendChild(p);
+      setTimeout(() => p.remove(), 2500);
+    }, 120);
 
-// 🔥 fuego continuo (ligero)
-setInterval(()=>{
-  const p=document.createElement('div');
-  p.className='fire';
-  p.style.left=Math.random()*innerWidth+'px';
-  p.style.top=(innerHeight-10)+'px';
-  document.body.appendChild(p);
-  setTimeout(()=>p.remove(),2500);
-},120);
-
-// 🔵 interacción touch real
-window.addEventListener('touchmove',e=>{
-  const t=e.touches[0];
-  const el=document.createElement('div');
-  el.className='touch';
-  el.style.left=t.clientX+'px';
-  el.style.top=t.clientY+'px';
-  document.body.appendChild(el);
-  setTimeout(()=>el.remove(),800);
-});
-</script>
+    // 🔵 interacción touch real
+    window.addEventListener('touchmove', e => {
+      const t = e.touches[0];
+      const el = document.createElement('div');
+      el.className = 'touch';
+      el.style.left = t.clientX + 'px';
+      el.style.top = t.clientY + 'px';
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 800);
+    });
+  </script>
 
 </body>
-</html>
 
+</html>
